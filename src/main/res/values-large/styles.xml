@@ -7,4 +7,8 @@
         <item name="android:padding">16dp</item>
     </style>
 
+    <style name="LoginFormButton">
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
 </resources>
