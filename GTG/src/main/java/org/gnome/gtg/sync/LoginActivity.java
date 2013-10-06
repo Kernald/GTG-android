@@ -283,12 +283,19 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             showProgress(false);
 
             if (intent.hasExtra(KEY_ERROR_MESSAGE)) {
-                // TODO: display the Toast only if error is different than incorrect password
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
-                Toast.makeText(getBaseContext(),
-                        intent.getStringExtra(KEY_ERROR_MESSAGE),
-                        Toast.LENGTH_SHORT).show();
+                String error = intent.getStringExtra(KEY_ERROR_MESSAGE);
+                if (GtgOnlineServerAuthenticate.INVALID_PASSWORD.equals(error)) {
+                    mPasswordView.setError(getResources().getString(R.string.error_incorrect_password));
+                    mPasswordView.requestFocus();
+                } else if (GtgOnlineServerAuthenticate.NET_ERROR.equals(error)) {
+                    Toast.makeText(getBaseContext(),
+                            getResources().getString(R.string.network_error),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getBaseContext(),
+                            getResources().getString(R.string.unknown_error),
+                            Toast.LENGTH_SHORT).show();
+                }
             } else {
                 finishLogin(intent);
             }
