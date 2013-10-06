@@ -72,7 +72,9 @@ public class GtgAuthenticator extends AbstractAccountAuthenticator {
             if (password != null) {
                 try {
                     Log.d(TAG, "Re-authenticating with the existing password");
-                    authToken = sServerAuthenticate.userSignIn(account.name, password, authTokenType);
+                    authToken = sServerAuthenticate.userSignIn(account.name,
+                            password,
+                            authTokenType);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

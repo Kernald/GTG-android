@@ -13,4 +13,5 @@ public class AccountGeneral {
 
     public static final IServerAuthenticate sServerAuthenticate = new GtgOnlineServerAuthenticate();
 
+    public static final String API_URL          = "http://gtgonline-parinporecha.rhcloud.com/api/v1/";
 }
