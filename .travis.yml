@@ -19,8 +19,12 @@ before_install:
   - echo "sdk.dir=$ANDROID_HOME" > local.properties
   - echo yes | android update sdk -t tools,platform-tools,extra-android-support,extra-android-m2repository,android-18,android-17 --force --no-ui
   - wget http://dl.google.com/android/repository/build-tools_r18.0.1-linux.zip
+  - wget http://dl.google.com/android/repository/build-tools_r17-linux.zip
   - mkdir -p $ANDROID_HOME/build-tools
   - unzip -qq build-tools_r18.0.1-linux.zip -d $ANDROID_HOME/build-tools/
+  - unzip -qq build-tools_r17-linux.zip -d $ANDROID_HOME/build-tools/
   - mv $ANDROID_HOME/build-tools/android-4.3 $ANDROID_HOME/build-tools/18.0.1
+  - mv $ANDROID_HOME/build-tools/android-4.2.2 $ANDROID_HOME/build-tools/17
   - find $ANDROID_HOME/build-tools
   - file $ANDROID_HOME/build-tools/18.0.1/aapt
+  - file $ANDROID_HOME/build-tools/17/aapt
