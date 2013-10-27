@@ -7,4 +7,6 @@
     <string name="unknown_error">Unknown error</string>
     <string name="network_error">Network error</string>
 
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>
